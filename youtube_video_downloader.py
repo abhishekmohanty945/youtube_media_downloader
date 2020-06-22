@@ -14,6 +14,8 @@ file_formats = point.fmt_streams
 
 sr = 1
 for s in file_formats:
+    if s.resolution == None or s.subtype == None:
+        continue
     if s.type == 'video':
         print(sr, end = '. ')
         print(s.resolution+' '+s.subtype)
